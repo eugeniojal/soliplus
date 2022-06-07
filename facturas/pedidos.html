@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SoliPlus - Pedidos</title>
+    <link rel="icon" type="image/svg+xml" sizes="17x16" href="../assets/img/favicons/solifav_16x16.svg">
+    <link rel="icon" type="image/png" sizes="34x32" href="../assets/img/favicons/soli_fav_32x32.png">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Open%20Sans.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/jsgrid.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css">
+    <link rel="stylesheet" href="../assets/css/popup.css">
+    <link rel="stylesheet" href="../assets/css/Team-Boxed.css">
+    <link rel="stylesheet" href="../assets/css/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/select2-1.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/r-2.2.9/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.css"/>
+
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+</head>
+
+<body id="page-top" style="background: var(--bs-gray-200);">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper" style="background: rgba(248,249,252,0);">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand fixed-top bg-white shadow d-flex mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <div><img src="../assets/img/soliplus_logo.svg"></div>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item"></li>
+                        </ul>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item d-lg-flex align-items-lg-center dropdown no-arrow"><span id="company" style="color: rgb(46,46,46);"></span>
+                                <div class="d-none d-sm-block topbar-divider"></div>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="padding-left: 0px;"><span class="d-none d-lg-inline me-2 text-gray-600 small" id="userName"></span><img class="border rounded-circle img-profile" id="profileImage" src="../assets/img/avatars/user.png"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Usuario</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" id="btn-logout" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Cerrar Sesión</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="col" style="margin-top: 40px;">
+                            <section class="team-boxed" style="background: rgba(0,0,0,0);">
+                                <div class="container" style="padding: 0px;width: 95%;max-width: 100%;">
+                                    <div class="row d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center people" style="padding-bottom: 70px;">
+                                        <div class="col-xl-12">
+                                            <div class="card shadow mb-3">
+                                                <div class="card-header" style="font-size: 12px;">
+                                                    <p class="text-primary m-0 fw-bold" id="lb-titulo"></p>
+                                                </div>
+                                                <nav class="navbar navbar-light navbar-expand-md" style="margin-top: 10px;">
+                                                    <div class="container-fluid">
+                                                        <ul class="navbar-nav">
+                                                            <li class="nav-item">
+                                                                <div class="btn-group" role="group" style="margin: 5px;margin-right: 5px;margin-bottom: 5px;"><button class="btn btn-primary disabled" id="bt-nuevo" type="button" disabled=""><i class="fas fa-file-alt"></i></button><button class="btn btn-primary disabled" id="bt-modificar" type="button" disabled=""><i class="far fa-edit"></i></button><button class="btn btn-primary disabled" id="bt-consultar" type="button" disabled=""><i class="fas fa-search"></i></button><button class="btn btn-primary disabled" id="bt-anular" type="button" disabled=""><i class="far fa-trash-alt"></i></button></div>
+                                                                <div class="btn-group" role="group" style="margin: 5px;"><button class="btn btn-primary disabled" id="bt-guardar" type="button" disabled=""><i class="fas fa-save"></i></button><button class="btn btn-primary disabled" id="bt-atras" type="button" disabled=""><i class="fas fa-undo"></i></button></div>
+                                                                <div class="btn-group" role="group" style="margin: 5px;"><a class="btn btn-primary" role="button" id="bt-home" href="../home.html"><i class="fas fa-home"></i></a></div>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="navbar-nav">
+                                                            <li class="nav-item" style="margin: 5px;"><span>Tipo Documento:&nbsp;</span><span id="label-tipodcto"></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
+                                                <div class="card-body" style="font-size: 10px;">
+                                                    <div style="padding: 10px;">
+                                                        <form id="form-encabezado">
+                                                            <div class="row" style="margin-bottom: 10px;">
+                                                                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>Documento&nbsp;</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><input class="form-control datos" type="number" id="input-nrodcto" inputmode="numeric" readonly="" disabled="" style="font-size: 11px;" pattern="[0-9]" minlength="1" maxlength="15" onkeypress="return event.keyCode === 8 || event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>Cliente</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><select class="form-select datos encabezado" id="input-cliente" readonly="" disabled="" style="font-size: 11px;text-align: left;"></select></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="margin-bottom: 10px;">
+                                                                <div class="col-sm-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3 offset-xl-0"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>Dcto Ref</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><input class="form-control datos encabezado" type="number" id="input-documento-referencia" inputmode="numeric" readonly="" disabled="" style="font-size: 11px;" minlength="1" maxlength="15" onkeypress="return event.keyCode === 8 || event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 offset-xl-0"><label class="col-form-label"><strong>Tipo Venta</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><select class="form-select datos encabezado" id="input-tipo-venta" disabled="" readonly="" style="font-size: 11px;text-align: left;"></select></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="margin-bottom: 10px;">
+                                                                <div class="col-sm-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3 offset-xl-0"><label class="col-form-label"><strong>Fecha</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><input class="form-control datos encabezado" id="input-fecha" type="date" readonly="" style="font-size: 11px;text-align: left;"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 offset-xl-0"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>F. Vencimiento</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><input class="form-control datos encabezado" id="input-fecha-vencimiento" type="date" readonly="" style="font-size: 11px;text-align: left;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="margin-bottom: 10px;">
+                                                                <div class="col-sm-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3 offset-xl-0"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>Tasa Cambio</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><input class="form-control datos encabezado" type="text" id="input-tasa-cambio" disabled="" readonly="" style="font-size: 11px;text-align: left;" inputmode="numeric"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-6 col-xl-6">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 offset-xl-0"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>Descuento</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 d-lg-flex align-items-lg-center"><input class="form-control datos encabezado" type="text" id="input-tasa-descuento" disabled="" readonly="" style="font-size: 11px;text-align: left;" inputmode="numeric"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row d-lg-flex d-xl-flex justify-content-lg-end justify-content-xl-end" style="margin-bottom: 10px;">
+                                                                <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4 offset-md-0 offset-xxl-0" style="text-align: right;">
+                                                                    <div class="btn-group d-flex" role="group" style="text-align: right;"><button class="btn btn-primary btn-sm movimiento" id="bt-cargar" type="button" style="margin-left: 5px;border-width: 1px;border-radius: 5px;font-size: 12px;width: 100%;">Cargar</button><button class="btn btn-primary btn-sm disabled movimiento" id="bt-limpiar" type="button" style="margin-left: 5px;border-width: 1px;border-radius: 5px;font-size: 12px;width: 100%;" disabled="">Limpiar</button><button class="btn btn-primary btn-sm disabled movimiento" id="bt-movimiento" type="button" disabled="" style="margin-left: 5px;border-radius: 5px;font-size: 12px;width: 100%;">Movimiento</button></div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card shadow" style="margin-bottom: 16px;font-size: 12px;">
+                                                <div class="card-body" style="padding: 11px;">
+                                                    <div id="jsGridMovimiento" class="jsTables"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card shadow mb-3" style="font-size: 10px;">
+                                                <div class="card-header" style="padding-top: 5px;padding-bottom: 5px;">
+                                                    <p class="text-primary m-0 fw-bold" style="font-size: 12px;">Totales Pedido</p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div style="padding: 10px;">
+                                                        <form>
+                                                            <div class="row" style="margin-bottom: 5px;">
+                                                                <div class="col-md-4 col-lg-4 col-xl-4">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>SubTotal</strong><br></label></div>
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-monto-bruto" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Descuento</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-monto-descuento" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>SubTotal 2</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="subtotal-2" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>IVA</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-monto-iva" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4 col-xl-4">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Retención IVA</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-monto-reteiva" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>SubTotal 3</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="subtotal-3" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Retención ISLR</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-monto-retefuente" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Total</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-monto-bs" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4 col-xl-4">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Tasa Cambio</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="monto-tasa-cambio" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Total M/E</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="monto-total-us-bs" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Total Pago Us</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-cobro-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label" style="font-size: 10px;"><strong>Total Pago Bs</strong></label></div>
+                                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="font-size: 10px;padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-cobro-bs" style="text-align: right;font-size: 10px;" disabled="" autocomplete="off" inputmode="numeric"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card shadow" style="margin-bottom: 16px;font-size: 10px;">
+                                                <div class="card-header" style="padding-top: 5px;padding-bottom: 5px;">
+                                                    <p class="text-primary m-0 fw-bold" style="font-size: 12px;">Costo x Servicio</p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div style="padding: 12px;">
+                                                        <form id="form-totales-cxs">
+                                                            <div class="row" style="margin-bottom: 5px;">
+                                                                <div class="col-sm-12 col-md-4">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label d-lg-flex"><strong>Subtotal</strong></label></div>
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-end" style="padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="monto-costo-servicio-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label d-lg-flex"><strong>Iva</strong></label></div>
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-end" style="padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="monto-iva-costo-servicio-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label d-lg-flex"><strong>Retención IVA</strong></label></div>
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-end" style="padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="monto-reteiva-costo-servicio-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-4">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label d-lg-flex"><strong>Subtotal 2</strong></label></div>
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center" style="padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="subtotal-2-costo-servicio-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label d-lg-flex"><strong>Retención ISLR</strong></label></div>
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center" style="padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="monto-retencion-islr-costo-servicio-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-top: 5px;padding-bottom: 5px;"><label class="col-form-label d-lg-flex"><strong>Total Pago U$</strong></label></div>
+                                                                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center" style="padding-top: 5px;padding-bottom: 5px;"><input class="form-control subtotal datos" type="text" id="total-costo-servicio-us" disabled="" autocomplete="off" inputmode="numeric" style="font-size: 10px;text-align: right;"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-4"></div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span id="copyright"></span></div>
+                </div>
+            </footer>
+        </div>
+        <div id="detailsDialog" style="display: none; width: 700px;">
+            <form id="detailsForm">
+                <div class="row">
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-producto" style="font-size: 11px;width: 100%;font-family: Nunito, sans-serif;margin: 0px;">Producto:<select class="form-select" id="input-popup-producto" name="input-popup-producto" style="font-size: 11px;font-family: Nunito, sans-serif;width: 100%;"></select></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-descripcion" style="font-size: 11px;width: 100%;font-family: Nunito, sans-serif;margin: 0px;">Descripción:<input class="form-control" type="text" id="input-popup-descripcion" name="input-popup-descripcion" style="font-size: 11px;width: 100%;font-family: Nunito, sans-serif;"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-cantidad" style="font-size: 11px;width: 100%;font-family: Nunito, sans-serif;margin: 0px;">Cantidad:<input class="form-control calcular-precio" type="text" id="input-popup-cantidad" name="input-popup-cantidad" autocomplete="off" style="font-size: 11px;width: 100%;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-islr" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">ISLR:<input class="form-control" type="text" id="input-popup-islr" name="input-popup-islr" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-iva" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">IVA:<input class="form-control" type="text" id="input-popup-iva" name="input-popup-iva" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-reiva" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Rete IVA:<input class="form-control" type="text" id="input-popup-retiva" name="input-popup-retiva" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-precio-us" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Precio US:<input class="form-control precio-unitario calcular-precio" type="text" id="input-popup-precio-us" name="input-popup-precio-us" style="font-size: 11px;font-family: Nunito, sans-serif;width: 100%;text-align: right;" disabled="" autocomplete="off"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-precio-usbs" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Precio US BS:<input class="form-control precio-unitario calcular-precio" type="text" id="input-popup-precio-usbs" name="input-popup-precio-usbs" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-precio-bs" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Precio BS:<input class="form-control precio-unitario calcular-precio" type="text" id="input-popup-precio-bs" name="input-popup-precio-bs" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-bruto-us" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Total US:<input class="form-control" type="text" id="input-popup-bruto-us" name="input-popup-bruto-us" style="font-size: 11px;font-family: Nunito, sans-serif;width: 100%;text-align: right;" disabled="" autocomplete="off"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-bruto-usbs" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Total US BS:<input class="form-control" type="text" id="input-popup-bruto-usbs" name="input-popup-bruto-usbs" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                    <div class="col-xl-4"><label class="col-form-label details-form-field" for="input-popup-bruto-bs" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;margin: 0px;">Total BS:<input class="form-control" type="text" id="input-popup-bruto-bs" name="input-popup-bruto-bs" disabled="" autocomplete="off" style="width: 100%;font-size: 11px;font-family: Nunito, sans-serif;text-align: right;"></label></div>
+                </div>
+                <div class="details-form-field" style="font-size: 12px;"><button class="btn btn-primary" id="bt-popup-guardar" type="submit" style="width: 200PX;font-size: 12px;">Guardar</button></div>
+            </form>
+        </div>
+        <div id="modal-errores">
+            <div class="modal fade" role="dialog" tabindex="-1" id="md-alertas">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="md-titulo">Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="md-mensaje">The content of your modal.</p>
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Cerrar</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-cargar-excel">
+            <div class="modal fade" role="dialog" tabindex="-1" id="md-cargar-excel">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Cargar desde Excel</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="card" style="margin-bottom: 10px;">
+                                    <div class="card-body" style="padding: 10px;font-size: 10px;"><input class="form-control d-md-flex" type="file" id="input-cargar-excel" accept=".xlsx, .xls" style="font-size: 14px;margin-top: 10px;margin-bottom: 10px;">
+                                        <div class="progress" id="progress-bar">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar" style="width: 0%;">0%</div>
+                                        </div>
+                                        <div class="alert alert-success border rounded" role="alert" id="alert-carga-excel" style="margin-top: 10px;margin-bottom: 10px;padding: 10px;padding-right: 16px;padding-left: 16px;padding-bottom: 6px;padding-top: 6px;"><span id="lb-resultado-carga-excel" style="font-size: 12px;"></span></div>
+                                        <div id="jsGridRechazados" class="jsTables" style="font-size: 11px;margin-top: 10px;margin-bottom: 10px;"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-primary btn-sm" id="bt-cerrar-carga-excel" type="button" data-bs-dismiss="modal">Cerrar</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-confirmar-anular">
+            <div class="modal fade" role="dialog" tabindex="-1" id="md-confirmar">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p></p>
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-light" id="modal-btn-cerrar" type="button" data-bs-dismiss="modal">Cerrar</button><button class="btn btn-primary" id="modal-btn-confirmar" type="button" data-bs-dismiss="modal">Confimar</button></div>
+                    </div>
+                </div>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/date-1.1.1/fh-3.2.0/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/api/sum().js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/dataRender/datetime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="../assets/js/system/common/config.js"></script>
+    <script src="../assets/js/system/common/common.js"></script>
+    <script src="../assets/js/system/common/logout.js"></script>
+    <script src="../assets/js/system/common/theme.js"></script>
+    <script src="../assets/js/system/jsgrid/jquery-1.10.2.js"></script>
+    <script src="../assets/js/system/jsgrid/jquery-ui.js"></script>
+    <script src="../assets/js/system/jsgrid/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.0/xlsx.mini.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+    <script src="../assets/js/system/select2/select2.js"></script>
+    <script src="../assets/js/system/select2/select2-1.js"></script>
+    <script src="../assets/js/system/select2/select2-2.js"></script>
+    <script src="../assets/js/system/select2/select2-3.js"></script>
+    <script src="../assets/js/system/select2/select2-4.js"></script>
+    <script src="../assets/js/system/select2/select2-5.js"></script>
+    <script src="../assets/js/system/select2/select2-6.js"></script>
+    <script src="../assets/js/modules/facturas.js"></script>
+</body>
+
+</html>

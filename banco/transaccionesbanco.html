@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SoliPlus</title>
+    <link rel="icon" type="image/svg+xml" sizes="17x16" href="../assets/img/favicons/solifav_16x16.svg">
+    <link rel="icon" type="image/png" sizes="34x32" href="../assets/img/favicons/soli_fav_32x32.png">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Open%20Sans.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/jsgrid.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css">
+    <link rel="stylesheet" href="../assets/css/popup.css">
+    <link rel="stylesheet" href="../assets/css/Team-Boxed.css">
+    <link rel="stylesheet" href="../assets/css/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/select2-1.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/r-2.2.9/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.css"/>
+
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+</head>
+
+<body id="page-top" style="background: var(--bs-gray-200);--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+    <div id="wrapper" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+        <div class="d-flex flex-column" id="content-wrapper" style="background: rgba(248,249,252,0);--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+            <div id="content" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                <nav class="navbar navbar-light navbar-expand fixed-top bg-white shadow d-flex mb-4 topbar static-top" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="container-fluid">
+                        <div style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><img src="../assets/img/soliplus_logo.svg" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                        <ul class="navbar-nav flex-nowrap ms-auto" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <li class="nav-item" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></li>
+                        </ul>
+                        <ul class="navbar-nav flex-nowrap ms-auto" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <li class="nav-item d-sm-flex d-lg-flex align-items-sm-center align-items-lg-center dropdown no-arrow" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><span id="company" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></span>
+                                <div class="d-none d-sm-block topbar-divider" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                                <div class="nav-item dropdown no-arrow" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="padding-left: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><span class="d-none d-lg-inline me-2 text-gray-600 small" id="userName" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></span><img class="border rounded-circle img-profile" id="profileImage" src="../assets/img/avatars/user.png" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><a class="dropdown-item" href="#" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></i>&nbsp;Usuario</a>
+                                        <div class="dropdown-divider" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div><a class="dropdown-item" id="btn-logout" href="#" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></i>&nbsp;Cerrar Sesión</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="row mb-3" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="col" style="margin-top: 40px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <section class="team-boxed" style="background: rgba(0,0,0,0);--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                <div class="container" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                    <div class="row d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center people" style="padding-bottom: 70px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                        <div class="col-xl-12" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                            <div class="row d-lg-flex justify-content-lg-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                <div class="col" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                    <div class="card shadow mb-4" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                        <div class="card-header d-flex d-sm-flex d-md-flex d-xl-flex align-items-center align-items-sm-center align-items-md-center align-items-xl-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                            <div class="col-10 col-sm-11 col-md-11" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                <p class="text-primary m-0 fw-bold" id="lb-titulo" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Cargar Transacciones</p>
+                                                            </div>
+                                                            <div class="col-2 col-md-1 col-xl-5 col-xxl-1 d-flex d-md-flex justify-content-center justify-content-md-center align-items-md-center justify-content-xl-end" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><a class="btn btn-secondary btn-sm" role="button" id="bt-home" href="../home.html" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><i class="fas fa-home" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></i></a></div>
+                                                        </div>
+                                                        <div class="card-body" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                            <div style="padding: 12px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                <form id="form-encabezado" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                    <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 offset-lg-0" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                            <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 col-xxl-2 offset-lg-0 d-md-flex d-xxl-flex align-items-md-center align-items-xxl-center" style="padding: 6px 12px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="col-form-label" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><strong>Banco</strong></label></div>
+                                                                                <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xl-6 col-xxl-6 d-md-flex d-lg-flex align-items-md-center align-items-lg-center" style="padding: 6px12px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><select class="form-select datos encabezado select" id="input-banco" required="" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></select></div>
+                                                                            </div>
+                                                                            <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                                                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 col-xxl-2 d-md-flex d-xxl-flex align-items-md-center align-items-xxl-center" style="padding: 6px 12px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="col-form-label" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><strong>Transacciones</strong></label></div>
+                                                                                <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xl-6 col-xxl-6 d-md-flex d-lg-flex align-items-md-center align-items-lg-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><input class="form-control datos encabezado select" type="file" id="fileUploader" required="" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                                                                                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-4 col-xxl-2 d-md-flex d-lg-flex justify-content-md-end align-items-md-center justify-content-lg-start align-items-lg-center justify-content-xl-start justify-content-xxl-start" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><button class="btn btn-primary encabezado" id="bt-movimiento" type="button" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><i class="fas fa-upload" style="margin: 5px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></i>Cargar</button></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row d-lg-flex justify-content-lg-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                <div class="col" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                    <div class="card mb-4" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row d-lg-flex justify-content-lg-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                <div class="col" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                    <div class="card mb-4" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                        <div class="card-body" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                                                            <p id="TituloTransaccionInvalida" class="color: var(--bs-red);padding-left: 12px;" text="Transacciones Inválidas" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></p>
+                                                            <div id="jsGridMovimientoError" class="jsTables" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                <div class="container my-auto" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="text-center my-auto copyright" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><span id="copyright" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></span></div>
+                    <div class="text-center my-auto copyright" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                </div>
+            </footer>
+        </div>
+        <div id="detailsDialog" style="display: none;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+            <form id="detailsForm" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col-xl-6 col-xxl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="d-block details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-documento" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Documento:</label><select class="form-select" id="input-popup-documento" name="input-popup-documento" required="" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></select></div>
+                    </div>
+                    <div class="col-xl-6 col-xxl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="d-block details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-saldo-abono" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Saldo Depósito:</label><input class="form-control" type="text" id="input-popup-saldo-abono" name="input-popup-saldo-documento-us" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" disabled=""></div>
+                    </div>
+                </div>
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-saldo-documento-us" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Saldo US:</label><input class="form-control" type="text" id="input-popup-saldo-documento-us" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-saldo-documento-us" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Saldo Bs:</label><input class="form-control" type="text" id="input-popup-saldo-documento-bs" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-saldo-documento-us" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Intereses:</label><input class="form-control" type="text" id="input-popup-saldo-documento-intereses" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-saldo-documento-us" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Int. Mora</label><input class="form-control" type="text" id="input-popup-saldo-documento-mora" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                    </div>
+                </div>
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-concepto" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Concepto:</label><select class="form-select popup" id="input-popup-concepto" name="input-popup-concepto" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></select></div>
+                    </div>
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-tipo-pago" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Tipo Pago:</label><select class="form-select popup select" id="input-popup-tipo-pago" name="input-popup-tipo-pago" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></select></div>
+                    </div>
+                </div>
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-porcentaje-us" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Porcentaje US:</label><input class="form-control popup por" type="number" id="input-popup-porcentaje-us" step="10" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" name="input-popup-porcentaje-us" disabled="" readonly=""></div>
+                    </div>
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-porcentaje-bs" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Porcentaje Bs:</label><input class="form-control popup por" type="number" id="input-popup-porcentaje-bs" step="10" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" name="input-popup-porcentaje-bs" disabled="" readonly=""></div>
+                    </div>
+                </div>
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col-xl-6 d-xl-flex align-items-xl-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="form-check" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><input class="form-check-input" type="checkbox" id="check-gasto-administrativo" disabled="" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-check-label" for="formCheck-1" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Calcular Gastos</label></div>
+                    </div>
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-valor-bs" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Tasa de Cambio</label><input class="form-control popup" type="text" id="input-popup-tasa-cambio" autocomplete="off" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" name="input-popup-valor-bs" disabled="" readonly=""></div>
+                    </div>
+                </div>
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-valor-us" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Valor US:</label><input class="form-control popup val" type="text" id="input-popup-valor-us" autocomplete="off" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" name="input-popup-valor-us" disabled="" readonly=""></div>
+                    </div>
+                    <div class="col-xl-6" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-valor-bs" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Valor Bs:</label><input class="form-control popup val" type="text" id="input-popup-valor-bs" autocomplete="off" style="width: 100%;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" name="input-popup-valor-bs" disabled="" readonly=""></div>
+                    </div>
+                </div>
+                <div class="row" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                    <div class="col" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                        <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><label class="form-label" for="input-popup-nota" style="margin-bottom: 0px;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Nota:</label><textarea class="form-control" id="input-popup-nota" name="input-popup-nota" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></textarea></div>
+                    </div>
+                </div>
+                <div class="details-form-field" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><button class="btn btn-primary disabled" id="bt-popup-guardar" type="submit" style="width: 200PX;--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" disabled="">Guardar</button></div>
+            </form>
+        </div>
+        <div id="modal-errores" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+            <div class="modal fade" role="dialog" tabindex="-1" id="md-alertas" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <h4 class="modal-title" id="md-titulo" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <p id="md-mensaje" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">The content of your modal.</p>
+                        </div>
+                        <div class="modal-footer" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><button class="btn btn-light" id="btn-cerrar-modal" type="button" data-bs-dismiss="modal" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Cerrar</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-transacciones" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+            <div class="modal fade" role="dialog" tabindex="-1" id="md-transacciones" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <h4 class="modal-title" id="md-titulo" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <p id="md-mensaje" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">The content of your modal.</p>
+                        </div>
+                        <div class="modal-footer" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><button class="btn btn-light" id="btn-proceder" type="button" data-bs-dismiss="modal" style="background: var(--bs-blue);--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Proceder</button></div>
+                    </div>
+                </div>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/date-1.1.1/fh-3.2.0/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/api/sum().js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/dataRender/datetime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="../assets/js/system/common/config.js"></script>
+    <script src="../assets/js/system/common/common.js"></script>
+    <script src="../assets/js/system/common/logout.js"></script>
+    <script src="../assets/js/system/common/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+    <script src="../assets/js/system/select2/select2.js"></script>
+    <script src="../assets/js/system/select2/select2-1.js"></script>
+    <script src="../assets/js/system/select2/select2-2.js"></script>
+    <script src="../assets/js/system/select2/select2-3.js"></script>
+    <script src="../assets/js/system/select2/select2-4.js"></script>
+    <script src="../assets/js/system/select2/select2-5.js"></script>
+    <script src="../assets/js/system/select2/select2-6.js"></script>
+    <script src="../assets/js/modules/transaccionesbancarias.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SoliPlus</title>
+    <link rel="icon" type="image/svg+xml" sizes="17x16" href="../assets/img/favicons/solifav_16x16.svg">
+    <link rel="icon" type="image/png" sizes="34x32" href="../assets/img/favicons/soli_fav_32x32.png">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Open%20Sans.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/jsgrid.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css">
+    <link rel="stylesheet" href="../assets/css/popup.css">
+    <link rel="stylesheet" href="../assets/css/Team-Boxed.css">
+    <link rel="stylesheet" href="../assets/css/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/select2-1.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/r-2.2.9/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.css"/>
+
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+</head>
+
+<body id="page-top" style="background: var(--bs-gray-200);">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper" style="background: rgba(248,249,252,0);">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand fixed-top bg-white shadow d-flex mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <div><img src="../assets/img/soliplus_logo.svg"></div>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item"></li>
+                        </ul>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item d-sm-flex d-lg-flex align-items-sm-center align-items-lg-center dropdown no-arrow"><span id="company" style="color: rgb(46,46,46);"></span>
+                                <div class="d-none d-sm-block topbar-divider"></div>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="padding-left: 0px;"><span class="d-none d-lg-inline me-2 text-gray-600 small" id="userName"></span><img class="border rounded-circle img-profile" id="profileImage" src="../assets/img/avatars/user.png"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Usuario</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" id="btn-logout" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Cerrar Sesión</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="col" style="margin-top: 40px;">
+                            <section class="team-boxed" style="background: rgba(0,0,0,0);">
+                                <div class="container">
+                                    <div class="row d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center people" style="padding-bottom: 70px;">
+                                        <div class="col-xl-12">
+                                            <div class="row d-lg-flex justify-content-lg-center">
+                                                <div class="col">
+                                                    <div class="card shadow mb-4">
+                                                        <div class="card-header py-3">
+                                                            <p class="text-primary m-0 fw-bold" id="lb-titulo">Transacciones Rechazadas</p>
+                                                        </div>
+                                                        <nav class="navbar navbar-light navbar-expand-md" style="margin-top: 10px;">
+                                                            <div class="container-fluid"><a class="btn btn-primary" role="button" id="bt-home" href="../home.html"><i class="fas fa-home"></i></a>
+                                                                <ul class="navbar-nav">
+                                                                    <li class="nav-item">
+                                                                        <div class="btn-group" role="group" style="margin: 5px;margin-right: 5px;margin-bottom: 5px;"></div>
+                                                                        <div class="btn-group" role="group" style="margin: 5px;"></div>
+                                                                        <div class="btn-group" role="group" style="margin: 5px;"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </nav>
+                                                        <div class="card-body">
+                                                            <form>
+                                                                <div class="row" style="margin: 0px;margin-bottom: 20px;">
+                                                                    <div class="col-12 col-sm-12 col-md-2 col-lg-1 col-xl-1 col-xxl-1 d-md-flex d-xxl-flex align-items-md-center align-items-xxl-center"><label class="col-form-label d-lg-flex align-items-lg-center"><strong>Banco</strong></label></div>
+                                                                    <div class="col-lg-4"><select class="form-select" id="input-banco"></select></div>
+                                                                    <div class="col"><a class="btn btn-secondary" role="button" id="bt-generar"><i class="fas fa-sync"></i></a></div>
+                                                                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 offset-xl-0 d-md-flex d-xxl-flex align-items-md-center align-items-xxl-center" style="padding: 6px12px;"><label class="form-label"><br></label>
+                                                                        <div class="btn-group" role="group" style="margin: 5px;"></div>
+                                                                        <div class="btn-group" role="group" style="margin: 5px;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div style="padding: 12px;">
+                                                                <form id="form-encabezado">
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-12 col-lg-12 col-xl-12 offset-lg-0">
+                                                                            <div class="row" style="margin-bottom: 20px;">
+                                                                                <div class="col d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center">
+                                                                                    <div id="jsGridConciliado"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span id="copyright"></span></div>
+                    <div class="text-center my-auto copyright"></div>
+                </div>
+            </footer>
+        </div>
+        <div id="detailsDialog" style="display:none">
+            <form id="detailsForm" style="font-size: 12px;">
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-xl-6 col-xxl-6" style="font-size: 12px;">
+                        <div class="d-block details-form-field"><label class="form-label" for="input-popup-documento" style="margin-bottom: 0px;font-size: 11px;">Documento:</label><select class="form-select" id="input-popup-documento" name="input-popup-documento" required="" style="width: 100%;font-size: 11px;"></select></div>
+                    </div>
+                    <div class="col-xl-6 col-xxl-6" style="font-size: 12px;">
+                        <div class="d-block details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-saldo-abono" style="font-size: 11px;margin-bottom: 0px;">Saldo Depósito:</label><input class="form-control" type="text" id="input-popup-saldo-abono" name="input-popup-saldo-documento-us" style="width: 100%;text-align: right;font-size: 11px;" disabled=""></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-saldo-documento-us" style="font-size: 11px;margin-bottom: 0px;">Saldo US:</label><input class="form-control" type="text" id="input-popup-saldo-documento-us" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;text-align: right;font-size: 11px;"></div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-saldo-documento-us" style="font-size: 11px;margin-bottom: 0px;">Saldo Bs:</label><input class="form-control" type="text" id="input-popup-saldo-documento-bs" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;text-align: right;font-size: 11px;"></div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-saldo-documento-us" style="font-size: 11px;margin-bottom: 0px;">Intereses:</label><input class="form-control" type="text" id="input-popup-saldo-documento-intereses" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;text-align: right;font-size: 11px;"></div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-xxl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-saldo-documento-us" style="font-size: 11px;margin-bottom: 0px;">Int. Mora</label><input class="form-control" type="text" id="input-popup-saldo-documento-mora" name="input-popup-saldo-documento-us" readonly="" style="width: 100%;text-align: right;font-size: 11px;"></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-concepto" style="font-size: 11px;margin-bottom: 0px;">Concepto:</label><select class="form-select popup" id="input-popup-concepto" name="input-popup-concepto" style="width: 100%;font-size: 11px;"></select></div>
+                    </div>
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-tipo-pago" style="font-size: 11px;margin-bottom: 0px;">Tipo Pago:</label><select class="form-select popup select" id="input-popup-tipo-pago" name="input-popup-tipo-pago" style="width: 100%;font-size: 11px;"></select></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-porcentaje-us" style="font-size: 11px;margin-bottom: 0px;">Porcentaje US:</label><input class="form-control popup por" type="number" id="input-popup-porcentaje-us" step="10" style="text-align: right;width: 100%;font-size: 11px;" name="input-popup-porcentaje-us" disabled="" readonly=""></div>
+                    </div>
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-porcentaje-bs" style="font-size: 11px;margin-bottom: 0px;">Porcentaje Bs:</label><input class="form-control popup por" type="number" id="input-popup-porcentaje-bs" step="10" style="text-align: right;width: 100%;font-size: 11px;" name="input-popup-porcentaje-bs" disabled="" readonly=""></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-xl-6 d-xl-flex align-items-xl-center" style="font-size: 12px;">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="check-gasto-administrativo" disabled=""><label class="form-check-label" for="formCheck-1">Calcular Gastos</label></div>
+                    </div>
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-valor-bs" style="font-size: 11px;margin-bottom: 0px;">Tasa de Cambio</label><input class="form-control popup" type="text" id="input-popup-tasa-cambio" autocomplete="off" style="text-align: right;width: 100%;font-size: 11px;" name="input-popup-valor-bs" disabled="" readonly=""></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-valor-us" style="font-size: 11px;margin-bottom: 0px;">Valor US:</label><input class="form-control popup val" type="text" id="input-popup-valor-us" autocomplete="off" style="text-align: right;width: 100%;font-size: 11px;" name="input-popup-valor-us" disabled="" readonly=""></div>
+                    </div>
+                    <div class="col-xl-6" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-valor-bs" style="font-size: 11px;margin-bottom: 0px;">Valor Bs:</label><input class="form-control popup val" type="text" id="input-popup-valor-bs" autocomplete="off" style="text-align: right;width: 100%;font-size: 11px;" name="input-popup-valor-bs" disabled="" readonly=""></div>
+                    </div>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col" style="font-size: 12px;">
+                        <div class="details-form-field" style="font-size: 12px;"><label class="form-label" for="input-popup-nota" style="font-size: 11px;margin-bottom: 0px;">Nota:</label><textarea class="form-control" id="input-popup-nota" name="input-popup-nota" style="font-size: 11px;"></textarea></div>
+                    </div>
+                </div>
+                <div class="details-form-field" style="font-size: 12px;"><button class="btn btn-primary disabled" id="bt-popup-guardar" type="submit" style="width: 200PX;font-size: 12px;" disabled="">Guardar</button></div>
+            </form>
+        </div>
+        <div id="modal-imagen">
+            <div class="modal fade" role="dialog" tabindex="-1" id="md-imagen">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Verificar Pago</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col d-md-flex justify-content-md-center align-items-md-center"><img class="img-fluid" id="imagen-certificado"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-light" id="btn-cerrar-1" type="button" data-bs-dismiss="modal" style="background: var(--bs-gray-600);color: var(--bs-gray-200);border-color: var(--bs-gray-800);border-left-style: none;">Cerrar</button></div>
+                    </div>
+                </div>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/date-1.1.1/fh-3.2.0/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/api/sum().js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/dataRender/datetime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="../assets/js/system/common/config.js"></script>
+    <script src="../assets/js/system/common/common.js"></script>
+    <script src="../assets/js/system/common/logout.js"></script>
+    <script src="../assets/js/system/common/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.0/xlsx.mini.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+    <script src="../assets/js/system/select2/select2.js"></script>
+    <script src="../assets/js/system/select2/select2-1.js"></script>
+    <script src="../assets/js/system/select2/select2-2.js"></script>
+    <script src="../assets/js/system/select2/select2-3.js"></script>
+    <script src="../assets/js/system/select2/select2-4.js"></script>
+    <script src="../assets/js/system/select2/select2-5.js"></script>
+    <script src="../assets/js/system/select2/select2-6.js"></script>
+    <script src="../assets/js/modules/rechazados.js"></script>
+</body>
+
+</html>

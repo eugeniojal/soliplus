@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es-419">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Soli Plus - Inicio de Sesión</title>
+    <link rel="icon" type="image/svg+xml" sizes="17x16" href="assets/img/favicons/solifav_16x16.svg">
+    <link rel="icon" type="image/png" sizes="34x32" href="assets/img/favicons/soli_fav_32x32.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Open%20Sans.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/jsgrid.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
+    <link rel="stylesheet" href="assets/css/Team-Boxed.css">
+    <link rel="stylesheet" href="assets/css/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/select2-1.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/r-2.2.9/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.css"/>
+
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+</head>
+
+<body class="d-md-flex justify-content-md-center align-items-md-center bg-gradient-primary" background="login-background.jpg" style="background: url(&quot;assets/img/login.jpg&quot;) round;background-size: cover;margin-top: 80px;">
+    <div class="container d-md-flex justify-content-md-center align-items-md-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+        <div class="row" style="min-width: 80%;max-width: 100%;">
+            <div class="col offset-xxl-0">
+                <div class="card" style="background: rgba(255,255,255,0.8);">
+                    <div class="card-body d-lg-flex align-items-lg-center">
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-xxl-6 d-flex d-sm-flex d-lg-flex justify-content-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"><img src="assets/img/soliplus_logo.svg" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;width: 70%;margin: 40px 0px;"></div>
+                        <div class="col-md-12 col-lg-6 col-xl-6 col-xxl-6 d-flex d-sm-flex d-md-flex d-lg-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+                            <form class="user" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;width: 70%;">
+                                <div class="row" style="margin-top: 40px;">
+                                    <div class="col">
+                                        <h4 class="text-primary d-flex d-sm-flex d-md-flex justify-content-center justify-content-sm-center justify-content-md-center mb-4" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Inicio de Sesión</h4>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col"><label class="form-label" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Usuario</label><input class="form-control" type="text" id="input-usuario" placeholder="Ingrese un usuario" autofocus="" autocomplete="off" required="" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col"><label class="form-label" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Contraseña</label><input class="form-control" type="password" id="input-password" placeholder="Ingrese su contraseña" required="" autocomplete="off" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col"><label class="form-label" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">Empresa</label><select class="form-select" id="input-empresa" requied="" required="" readonly="" disabled="" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;"></select></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><button class="btn btn-primary disabled d-block w-100" id="bt-login" type="button" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;" disabled="">Entrar</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-errores" style="--bs-primary: #188cfb;--bs-primary-rgb: 24,140,251;">
+        <div class="modal fade" role="dialog" tabindex="-1" id="md-alertas">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="md-titulo">Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="md-mensaje">The content of your modal.</p>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cerrar</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/date-1.1.1/fh-3.2.0/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/api/sum().js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.3/dataRender/datetime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="assets/js/system/common/config.js"></script>
+    <script src="assets/js/system/common/common.js"></script>
+    <script src="assets/js/system/common/login.js"></script>
+    <script src="assets/js/system/common/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.0/xlsx.mini.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+    <script src="assets/js/system/select2/select2.js"></script>
+    <script src="assets/js/system/select2/select2-1.js"></script>
+    <script src="assets/js/system/select2/select2-2.js"></script>
+    <script src="assets/js/system/select2/select2-3.js"></script>
+    <script src="assets/js/system/select2/select2-4.js"></script>
+    <script src="assets/js/system/select2/select2-5.js"></script>
+    <script src="assets/js/system/select2/select2-6.js"></script>
+</body>
+
+</html>
